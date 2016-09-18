@@ -28,8 +28,6 @@ class Robot
     @all.each_with_index do |face, index|
       if face.first == @direction
         @direction = @all[(index + 1) % @all.length].first
-        # @x = face[1]
-        # @y = face.last
         break
       end
     end
@@ -62,15 +60,5 @@ class Robot
     end
   end
 
-end
 
-# robot = Robot.new(1,0,"EAST")
-# p robot.left
-# robot.move
-# robot.report
-# robot.right
-# robot.report
-# robot.right
-# robot.report
-# robot.right
-# robot.report
+end
