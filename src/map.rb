@@ -2,10 +2,10 @@
 
 class Map
   attr_accessor :grid_size, :origin
-  
+
   def initialize(origin)
     @grid_size = [4, 4]
-    if origin[0] > @grid_size.first || origin[1] > @grid_size.last
+    if origin.first > @grid_size.first || origin.last > @grid_size.last
       puts "You can't place the robot out of the table size."
     else
       @origin = origin
