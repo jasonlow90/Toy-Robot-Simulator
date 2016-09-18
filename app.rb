@@ -1,5 +1,5 @@
-require("./map.rb")
-require("./robot.rb")
+require("./src/map.rb")
+require("./src/robot.rb")
 
 puts "Welcome to Toy Robot Game"
 puts "The table has a grid size of 5 x 5"
