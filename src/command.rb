@@ -1,28 +1,39 @@
 require("./map.rb")
 require("./robot.rb")
 
-# include Robot, Map
-puts "Please insert command"
+puts "Welcome to Toy Robot Game"
+puts "The table has a grid size of 5 x 5"
+puts "Choose an option: (case insensitive)"
+puts ""
+puts "PLACE x,y,direction - Place the robot on the table"
+puts "Please enter a number within 0 - 4 for both x and y axis to place the robot on the table"
+puts "Please choose the facing direction of the robot. (EAST, NORTH, WEST, SOUTH)"
+puts "EXIT - close the program"
+puts ""
 loop do
   task = gets.chomp.upcase.split(" ")
   case task.first
   when "PLACE"
     details = task.last.split(",")
-    # puts "this is #{details}"
-    # puts (details[1].to_i.is_a?(Integer))
     map = Map.new
-    puts map.grid_size
-    puts details[0].to_i
-    if (details[0].to_i > map.grid_size[0] || details[1].to_i > map.grid_size[1])
-      puts "please choose again"
+    puts details.last
+    puts ""
+    if (details.first.to_i > map.grid_size.first || details[1].to_i > map.grid_size[1])
+      puts "You cannot place the robot outside of the table. *This is a 5 x 5 table*"
+    elsif !(map.valid_direction?(details.last))
+      puts "Please input a valid direction."
     else
       robot = Robot.new(details.first.to_i, details[1].to_i, details.last)
-      # puts map.position
-      puts robot.report
-      puts "Robot has been made. please tell me the next step"
+      puts "Robot has been placed on the table. Please state the next command."
+      puts "PLACE - Relocate the robot on the table"
+      puts "MOVE - Move one step forward"
+      puts "LEFT - Turn 90 degree left"
+      puts "RIGHT - Turn 90 degree right"
+      puts "REPORT - Shows the x-axis, y-axis and facing direction of the robot."
+      puts "EXIT - Remove the robot from the table"
       loop do
-        task2 = gets.chomp.upcase
-        case task2
+        task_2 = gets.chomp.upcase
+        case task_2
         when "MOVE"
           if robot.valid_move?(map.grid_size)
             puts "You are at the edge of the table! Please type REPORT to check your current location!"
@@ -42,7 +53,7 @@ loop do
           puts "The robot is no longer on the table"
           break
         else
-          puts "Sorry, command not found.Please input a valid command."
+          puts "Sorry, command not found. Please input a valid command."
         end
       end
     end
