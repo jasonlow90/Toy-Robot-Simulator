@@ -1,24 +1,24 @@
 # require ("./map.rb")
 class Robot
-  attr_accessor :dx, :dy, :direction, :all
+  attr_accessor :x, :y, :direction, :all
 
-  def initialize(dx, dy, direction)
-    @dx = dx
-    @dy = dy
-    @direction = direction.to_sym
+  def initialize(x, y, direction)
+    @x = x
+    @y = y
+    @direction = direction
     @all = [
-    [:EAST,  +1,  0],
-    [:NORTH,  0, +1],
-    [:WEST,  -1,  0],
-    [:SOUTH,  0, -1],
+    ["EAST",  +1,  0],
+    ["NORTH",  0, +1],
+    ["WEST",  -1,  0],
+    ["SOUTH",  0, -1],
   ]
   end
 
   def move
     @all.each do |face|
       if face.first == @direction
-        @dx = @dx + face[1]
-        @dy = @dy + face[2]
+        @x = @x + face[1]
+        @y = @y + face.last
       end
     end
 
@@ -27,7 +27,10 @@ class Robot
   def left
     @all.each_with_index do |face, index|
       if face.first == @direction
-       return @direction = @all[(index + 1) % @all.length].first
+        @direction = @all[(index + 1) % @all.length].first
+        # @x = face[1]
+        # @y = face.last
+        break
       end
     end
   end
@@ -35,15 +38,39 @@ class Robot
   def right
     @all.each_with_index do |face, index|
       if face.first == @direction
-        return @direction = @all[(index - 1) % @all.length].first
+        @direction = @all[(index - 1) % @all.length].first
+        break
       end
     end
   end
 
   def report
-    puts "#{@dx}, #{@dy}, #{@direction}"
+    puts "OUTPUT: #{@x}, #{@y}, #{@direction}"
+  end
+
+  def valid_move?(grid_size)
+    @all.each do |face|
+      if face.first == @direction
+        if (@x + face[1]) > grid_size.first || (@x + face[1]) < 0
+          return true
+        elsif (@y + face.last) > grid_size.first || (@y + face.last) < 0
+          return true
+        else
+          return false
+        end
+      end
+    end
   end
 
 end
 
-robot = Robot.new(0, 0, "EAST")
+# robot = Robot.new(1,0,"EAST")
+# p robot.left
+# robot.move
+# robot.report
+# robot.right
+# robot.report
+# robot.right
+# robot.report
+# robot.right
+# robot.report
