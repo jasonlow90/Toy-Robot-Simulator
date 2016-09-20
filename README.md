@@ -20,6 +20,7 @@ gem install rpsec
 
 Run the test by running
 ```
+cd spec
 rspec robot_spec.rb
 rspec interface_spec.rb
 rspec map_spec.rb
