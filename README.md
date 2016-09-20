@@ -1,6 +1,57 @@
-# Toy Robot Simulator
+# Toy Robot Simulator(Jason Low)
 
-### Description:
+### Technical Requirement
+Minimum requirements to run the app on your computer:
+
+- Ruby 2.2.2
+- Bash Terminal
+
+### Installation
+Go to terminal and run the following code on your desired directory:
+```
+git clone https://github.com/jasonlow90/Toy-Robot-Simulator.git
+```
+
+Install rspec by running
+
+```
+gem install rpsec
+```
+
+Run the test by running
+```
+rspec robot_spec.rb
+rspec interface_spec.rb
+rspec map_spec.rb
+```
+Run the app by running
+```
+ruby app.rb
+```
+
+### Instructions
+1. Open the terminal in the toy robot directory.
+2. Run ```ruby app.rb```
+3. Follow the instructions on screen. Please note that your first command must be PLACE x-axis, y-axis, direction. All commands are case-insensitive as well.
+4. Enjoy
+
+### Challenge:
+- Difference between Class Method, Instance Method
+- Writing good TDD practice (Test Driven Development)
+- Writing CLI with Class in Ruby
+
+### Things to improve
+- Spend more time on writing test before writing the actual code
+- Refactoring my code to be more DRY
+- Better pre-planning
+
+### Links that helped me
+- Inheritance and scoping: http://www.eriktrautman.com/posts/ruby-explained-inheritance-and-scope
+- TDD with Rspec: https://semaphoreci.com/community/tutorials/getting-started-with-rspec
+- Ruby Syntax:
+https://ruby-doc.org/core-2.2.2/doc/syntax_rdoc.html
+
+### Toy-Robot-Simulator Description:
 The application is a simulation of a toy robot moving on a square tabletop, of dimensions 5
 units x 5 units. There are no other obstructions on the table surface. The robot is free to roam around the surface of the table, but must be prevented from falling to destruction. Any movement that would result in the robot falling from the table must be prevented, however further valid movement commands must still be allowed.
 
