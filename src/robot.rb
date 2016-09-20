@@ -1,24 +1,11 @@
 # require ("./map.rb")
 class Robot
-  attr_accessor :x, :y, :direction
-  attr_reader :all
+  def initialize
 
-  def initialize(x, y, direction)
-    @x = x
-    @y = y
-    @direction = direction
-    @all = [
-    ["EAST",  +1,  0],
-    ["NORTH",  0, +1],
-    ["WEST",  -1,  0],
-    ["SOUTH",  0, -1],
-  ]
   end
 
-  def reposition(x, y, direction)
-    @x = x
-    @y = y
-    @direction = direction
+  def place(x, y, direction)
+
   end
 
 
