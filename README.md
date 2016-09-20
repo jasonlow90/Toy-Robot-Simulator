@@ -40,6 +40,10 @@ MOVE
 REPORT
 Output: 0,1,NORTH
 - **b)**
+PLACE 0,0,NORTH
+LEFT
+REPORT
+Output: 0,0,WEST
 4. Enjoy
 
 ### Challenge:
