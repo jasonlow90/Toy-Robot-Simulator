@@ -45,7 +45,7 @@ describe Robot do
         end
 
         it 'will rotate to west' do
-          expect(instance.instance_variable_get(@direction)).to eq 'WEST'
+          expect(instance.instance_variable_get(:@direction)).to eq 'WEST'
         end
       end
 
@@ -56,7 +56,7 @@ describe Robot do
         end
 
         it 'will rotate to north' do
-          expect(instance.instance_variable_get(@direction)).to eq 'NORTH'
+          expect(instance.instance_variable_get(:@direction)).to eq 'NORTH'
         end
       end
 
@@ -67,7 +67,7 @@ describe Robot do
         end
 
         it 'will rotate to east' do
-          expect(instance.instance_variable_get(@direction)).to eq 'EAST'
+          expect(instance.instance_variable_get(:@direction)).to eq 'EAST'
         end
       end
 
@@ -78,7 +78,7 @@ describe Robot do
         end
 
         it 'will rotate to south' do
-          expect(instance.instance_variable_get(@direction)).to eq 'SOUTH'
+          expect(instance.instance_variable_get(:@direction)).to eq 'SOUTH'
         end
       end
     end
@@ -93,7 +93,7 @@ describe Robot do
         end
 
         it 'will rotate to east' do
-          expect(instance.instance_variable_get(@direction)).to eq 'EAST'
+          expect(instance.instance_variable_get(:@direction)).to eq 'EAST'
         end
       end
 
@@ -104,7 +104,7 @@ describe Robot do
         end
 
         it 'will rotate to south' do
-          expect(instance.instance_variable_get(@direction)).to eq 'SOUTH'
+          expect(instance.instance_variable_get(:@direction)).to eq 'SOUTH'
         end
       end
 
@@ -115,7 +115,7 @@ describe Robot do
         end
 
         it 'will rotate to west' do
-          expect(instance.instance_variable_get(@direction)).to eq 'WEST'
+          expect(instance.instance_variable_get(:@direction)).to eq 'WEST'
         end
       end
 
@@ -126,7 +126,7 @@ describe Robot do
         end
 
         it 'will rotate to north' do
-          expect(instance.instance_variable_get(@direction)).to eq 'NORTH'
+          expect(instance.instance_variable_get(:@direction)).to eq 'NORTH'
         end
       end
     end
