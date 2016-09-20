@@ -17,6 +17,11 @@ class Interface
     puts "PLACE x,y,direction - Place the robot on the table"
     puts "Please enter a number within 0 - 4 for both x and y axis to place the robot on the table"
     puts "Please choose the facing direction of the robot. (EAST, NORTH, WEST, SOUTH)"
+    puts "PLACE x,y,direction - Place the robot on the table"
+    puts "MOVE - Move one step forward"
+    puts "LEFT - Turn 90 degree left"
+    puts "RIGHT - Turn 90 degree right"
+    puts "REPORT - Shows the x-axis, y-axis and facing direction of the robot."
   end
 
   def get_user_command

@@ -46,7 +46,7 @@ describe Interface do
 
   describe 'print_welcome_message' do
     let(:welcome_message) do
-      /Welcome to Toy Robot Game\nThe table has a grid size of 5 x 5\nChoose an option: \(case insensitive\)\n\nPLACE x,y,direction - Place the robot on the table\nPlease enter a number within 0 - 4 for both x and y axis to place the robot on the table\nPlease choose the facing direction of the robot. \(EAST, NORTH, WEST, SOUTH\)\n.*/
+      /Welcome to Toy Robot Game\nThe table has a grid size of 5 x 5\nChoose an option: \(case insensitive\)\n\nPLACE x,y,direction - Place the robot on the table\nPlease enter a number within 0 - 4 for both x and y axis to place the robot on the table\nPlease choose the facing direction of the robot. \(EAST, NORTH, WEST, SOUTH\)\nPLACE x,y,direction - Place the robot on the table\nMOVE - Move one step forward\nLEFT - Turn 90 degree left\nRIGHT - Turn 90 degree right\nREPORT - Shows the x-axis, y-axis and facing direction of the robot.\n.*/
     end
 
     it 'should display the welcome messages' do
