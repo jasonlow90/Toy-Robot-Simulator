@@ -15,7 +15,7 @@ git clone https://github.com/jasonlow90/Toy-Robot-Simulator.git
 Install rspec by running
 
 ```
-gem install rpsec
+gem install rspec
 ```
 
 Run the test by running
@@ -33,7 +33,13 @@ ruby app.rb
 ### Instructions
 1. Open the terminal in the toy robot directory.
 2. Run ```ruby app.rb```
-3. Follow the instructions on screen. Please note that your first command must be PLACE x-axis, y-axis, direction. All commands are case-insensitive as well.
+3. Follow the instructions on screen. Please note that your first command must be PLACE x-axis, y-axis, direction. All commands are case-insensitive as well. For example: - 
+**a)**
+PLACE 0,0,NORTH
+MOVE
+REPORT
+Output: 0,1,NORTH
+- **b)**
 4. Enjoy
 
 ### Challenge:
