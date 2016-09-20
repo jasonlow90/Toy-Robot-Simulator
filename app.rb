@@ -41,6 +41,8 @@ loop do
             robot.move
             puts "Robot has just moved one step forward towards #{robot.direction}!"
           end
+        # when "PLACE"
+        #   p task_2.split(" ")
         when "LEFT"
           robot.left
           puts "Robot is currently facing #{robot.direction}"

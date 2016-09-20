@@ -1,6 +1,7 @@
 # require ("./map.rb")
 class Robot
-  attr_accessor :x, :y, :direction, :all
+  attr_accessor :x, :y, :direction
+  attr_reader :all
 
   def initialize(x, y, direction)
     @x = x
@@ -13,6 +14,13 @@ class Robot
     ["SOUTH",  0, -1],
   ]
   end
+
+  def reposition(x, y, direction)
+    @x = x
+    @y = y
+    @direction = direction
+  end
+
 
   def move
     @all.each do |face|
