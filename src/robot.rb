@@ -19,6 +19,18 @@ class Robot
 
 
 
+  def report
+    return if not_placed_on_map
+
+    puts "OUTPUT: #{@x}, #{@y}, #{@direction}"
+  end
+
+  private
+
+  def not_placed_on_map
+    @x == nil && @y == nil && @direction == nil
+  end
+
   def will_fall?(x, y)
     x < 0 || x > @grid_width || y < 0 || y > @grid_length
   end
