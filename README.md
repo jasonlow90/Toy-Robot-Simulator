@@ -55,6 +55,7 @@ Output: 0,0,WEST
 - Spend more time on writing test before writing the actual code
 - Refactoring my code to be more DRY
 - Better pre-planning. Have to refactor two days worth of work due to bad planning
+- Adding error handling for better user experience
 
 ### Links that helped me
 - Inheritance and scoping: http://www.eriktrautman.com/posts/ruby-explained-inheritance-and-scope
