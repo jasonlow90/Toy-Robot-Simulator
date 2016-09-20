@@ -33,7 +33,43 @@ describe Robot do
   end
 
   describe '#move' do
+    context 'when placed on a map' do
+      context 'and the move is valid' do
+        before do
+          instance.place(0, 0, 'EAST')
+          instance.move
+        end
 
+        it 'moves to the new position' do
+          expect(instance.instance_variable_get(:@x)).to eq 1
+          expect(instance.instance_variable_get(:@y)).to eq 0
+          expect(instance.instance_variable_get(:@direction)).to eq 'EAST'
+        end
+      end
+
+      context 'but the move is invalid' do
+        before do
+          instance.place(0, 0, 'WEST')
+          instance.move
+        end
+
+        it 'ignores the command and will not move off the map' do
+          expect(instance.instance_variable_get(:@x)).to eq 0
+          expect(instance.instance_variable_get(:@y)).to eq 0
+          expect(instance.instance_variable_get(:@direction)).to eq 'WEST'
+        end
+      end
+    end
+
+    context 'when not placed on a map' do
+      before { instance.move }
+
+      it 'ignores the command' do
+        expect(instance.instance_variable_get(:@x)).to eq nil
+        expect(instance.instance_variable_get(:@y)).to eq nil
+        expect(instance.instance_variable_get(:@direction)).to eq nil
+      end
+    end
   end
 
   describe '#left' do
