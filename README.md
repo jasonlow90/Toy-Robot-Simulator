@@ -39,7 +39,7 @@ PLACE 0,0,NORTH
 MOVE
 REPORT
 Output: 0,1,NORTH
-- **b)**
+**b)**
 PLACE 0,0,NORTH
 LEFT
 REPORT
@@ -49,18 +49,21 @@ Output: 0,0,WEST
 ### Challenge:
 - Difference between Class Method, Instance Method
 - Writing good TDD practice (Test Driven Development)
-- Writing CLI with Class in Ruby
+- Writing Command Line Input in Ruby
 
 ### Things to improve
 - Spend more time on writing test before writing the actual code
 - Refactoring my code to be more DRY
-- Better pre-planning
+- Better pre-planning. Have to refactor two days worth of work due to bad planning
 
 ### Links that helped me
 - Inheritance and scoping: http://www.eriktrautman.com/posts/ruby-explained-inheritance-and-scope
 - TDD with Rspec: https://semaphoreci.com/community/tutorials/getting-started-with-rspec
 - Ruby Syntax:
 https://ruby-doc.org/core-2.2.2/doc/syntax_rdoc.html
+- Ruby CLI:
+http://zetcode.com/lang/rubytutorial/io/
+& https://learnrubythehardway.org/book/ex14.html
 
 ### Toy-Robot-Simulator Description:
 The application is a simulation of a toy robot moving on a square tabletop, of dimensions 5
