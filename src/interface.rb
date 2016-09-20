@@ -1,9 +1,7 @@
 class Interface
-  VALID_COMMANDS = ['PLACE', 'MOVE', 'LEFT', 'RIGHT', 'REPORT', 'EXIT']
-
-  def initialize(map = Map.new, robot = Robot.new)
-    @map = map
-    @robot = robot
+  def initialize
+    @map = Map.new
+    @robot = Robot.new(@map)
     print_welcome_message
     @command_list = get_user_command
     run_user_command(@command_list)
@@ -19,27 +17,25 @@ class Interface
     puts "PLACE x,y,direction - Place the robot on the table"
     puts "Please enter a number within 0 - 4 for both x and y axis to place the robot on the table"
     puts "Please choose the facing direction of the robot. (EAST, NORTH, WEST, SOUTH)"
-    puts "EXIT - close the program"
   end
 
   def get_user_command
-    input_list = gets.chomp.split(' ')
-
-    sanitize_input(input_list)
+    STDIN.gets.chomp.split(' ')
   end
 
   def run_user_command(command_list)
     until command_list.empty?
-      command = command_list.shift
+      command = command_list.shift.downcase
 
+      case command
+      when 'place'
+        place_options = command_list.shift.upcase
+        next unless place_options =~ /\d\,\d\,(NORTH|EAST|SOUTH|WEST)/
+
+        @robot.send(command, *place_options.split(','))
+      when 'move', 'left', 'right', 'report'
+        @robot.send(command)
+      end
     end
-  end
-
-  def sanitize_input(input_list)
-    input_list.drop_while { |input| input != 'PLACE' }
-  end
-
-  def input_valid?(input)
-    VALID_COMMANDS.include?(input)
   end
 end
