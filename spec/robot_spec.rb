@@ -20,11 +20,13 @@ describe Robot do
     @robot.left
   end
 
-  describe 'left' do
+  context 'after moving left, robot direction should be south' do
     it 'Should be able to turn 90 degrees left of current direction' do
       expect(@robot.direction).to eq 'SOUTH'
     end
   end
+end
+  describe 'left' do
 
   before do
     @robot.right
