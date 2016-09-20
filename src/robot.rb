@@ -1,59 +1,25 @@
-# require ("./map.rb")
 class Robot
-  def initialize
+  LIST_OF_DIRECTIONS = ['NORTH', 'EAST', 'SOUTH', 'WEST']
 
+  def initialize(map)
+    @grid_width = map.grid_width
+    @grid_length = map.grid_length
+    @x = nil
+    @y = nil
+    @direction = nil
   end
 
   def place(x, y, direction)
+    return if will_fall?(x.to_i, y.to_i)
 
+    @x = x.to_i
+    @y = y.to_i
+    @direction = direction
   end
 
 
-  def move
-    @all.each do |face|
-      if face.first == @direction
-        @x = @x + face[1]
-        @y = @y + face.last
-      end
-    end
 
+  def will_fall?(x, y)
+    x < 0 || x > @grid_width || y < 0 || y > @grid_length
   end
-
-  def left
-    @all.each_with_index do |face, index|
-      if face.first == @direction
-        @direction = @all[(index + 1) % @all.length].first
-        break
-      end
-    end
-  end
-
-  def right
-    @all.each_with_index do |face, index|
-      if face.first == @direction
-        @direction = @all[(index - 1) % @all.length].first
-        break
-      end
-    end
-  end
-
-  def report
-    puts "OUTPUT: #{@x}, #{@y}, #{@direction}"
-  end
-
-  def valid_move?(grid_size)
-    @all.each do |face|
-      if face.first == @direction
-        if (@x + face[1]) > grid_size.first || (@x + face[1]) < 0
-          return true
-        elsif (@y + face.last) > grid_size.first || (@y + face.last) < 0
-          return true
-        else
-          return false
-        end
-      end
-    end
-  end
-
-
 end
