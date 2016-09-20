@@ -17,6 +17,21 @@ class Robot
     @direction = direction
   end
 
+  def move
+    return if not_placed_on_map
+
+    case @direction
+    when 'NORTH'
+      @y += 1 unless will_fall?(@x, @y + 1)
+    when 'SOUTH'
+      @y -= 1 unless will_fall?(@x, @y - 1)
+    when 'EAST'
+      @x += 1 unless will_fall?(@x + 1, @y)
+    when 'WEST'
+      @x -= 1 unless will_fall?(@x-1, @y)
+    end
+  end
+
   def left
     return if not_placed_on_map
 
