@@ -17,7 +17,21 @@ class Robot
     @direction = direction
   end
 
+  def left
+    return if not_placed_on_map
 
+    @direction = LIST_OF_DIRECTIONS[LIST_OF_DIRECTIONS.find_index(@direction) - 1]
+  end
+
+  def right
+    return if not_placed_on_map
+
+    if @direction == LIST_OF_DIRECTIONS.last
+      @direction = LIST_OF_DIRECTIONS.first
+    else
+      @direction = LIST_OF_DIRECTIONS[LIST_OF_DIRECTIONS.find_index(@direction) + 1]
+    end
+  end
 
   def report
     return if not_placed_on_map
